@@ -10,7 +10,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts and return them to the user with res.json
-    app.get("/recipes", function(req, res) {
+    app.get("/api/recipes", function(req, res) {
         db.Recipes.findAll({}).then(function(result) {
         res.json(result);
         });
