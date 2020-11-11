@@ -17,16 +17,16 @@ module.exports = function(app) {
     });
 
  // Get route for returning posts of a specific category ind all posts where the category is equal to req.params.category
-  app.get("/recipes/category/:category", function(req, res) {
-    db.Recipe.findAll ({
-        where: {
-            category: req.params.category,
-        } 
-    }).then(function (result){
-        res.json(result);
-    });
+  // app.get("/recipes/category/:category", function(req, res) {
+  //   db.Recipe.findAll ({
+  //       where: {
+  //           category: req.params.category,
+  //       } 
+  //   }).then(function (result){
+  //       res.json(result);
+  //   });
 
-  });
+  // });
 
   // Get route for retrieving a single recipe where the id is equal to req.params.id
   app.get("/recipes/:id", function(req, res) {
@@ -44,7 +44,7 @@ module.exports = function(app) {
   app.post("/recipes", function(req, res) {
     db.Recipe.create ({
         name: req.body.name,
-        ingredient: req.body.ingredient,
+        ingredients: req.body.ingredients,
         category: req.body.category,
         content: req.body.content
            
@@ -68,7 +68,7 @@ module.exports = function(app) {
   app.put("/recipes", function(req, res) {
       db.Recipe.update({
           name: req.body.name,
-          ingredient: req.body.ingredient,
+          ingredients: req.body.ingredients,
           category: req.body.category,
           content: req.body.content
       

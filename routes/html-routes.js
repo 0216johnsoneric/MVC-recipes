@@ -12,7 +12,7 @@ module.exports = function(app) {
 
   // index route loads view/index.handlebars
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.handlebars"));
+    res.render("index");
   });
 
   // Route to the cms page
