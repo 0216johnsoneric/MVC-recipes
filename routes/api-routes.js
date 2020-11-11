@@ -10,7 +10,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts and return them to the user with res.json
-    app.get("/api/recipes", function(req, res) {
+    app.get("/api/all", function(req, res) {
         db.Recipes.findAll({}).then(function(result) {
         res.json(result);
         });
@@ -29,7 +29,7 @@ module.exports = function(app) {
   // });
 
   // Get route for retrieving a single recipe where the id is equal to req.params.id
-  app.get("/recipes/:id", function(req, res) {
+  app.get("/api/recipes/:id", function(req, res) {
     db.Recipe.findOne ({
         where: {
             id: req.params.id,
