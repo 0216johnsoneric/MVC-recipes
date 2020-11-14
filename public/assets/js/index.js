@@ -42,7 +42,6 @@ function renderRecipes(data) {
     // $("#stats").show();
 
     for (var i = 0; i < data.length; i++) {
-
     var div = $("<div>");
     // var newSection = $("<div>");
     // newSection.addClass("new");
