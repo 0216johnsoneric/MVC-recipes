@@ -29,14 +29,8 @@ module.exports = function(app) {
 
     // POST route for saving a new recipe for creating a recipe using req.content
     app.post("/api/new", function(req, res) {
-      
-      db.Recipe.create ({
-        name: req.body.name,
-        ingredients: req.body.ingredients,
-        category: req.body.category,
-        content: req.body.content
-           
-      }).then(function (result){
+      console.log(req.body)
+      db.Recipe.create(req.body).then(function (result){
         res.json(result);
       })
     });
@@ -46,7 +40,7 @@ module.exports = function(app) {
       
       db.Recipe.update({
           name: req.body.name,
-          ingredients: req.body.ingredients,
+          ingredient: req.body.ingredient,
           category: req.body.category,
           content: req.body.content
       

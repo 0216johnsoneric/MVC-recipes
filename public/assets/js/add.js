@@ -2,18 +2,18 @@
 
 // When user clicks add-btn
 $("#add-btn").on("click", function(event) {
-//   event.preventDefault();
+  event.preventDefault();
 
-  // Make a newBook object
-  var Recipe = {
+  // Make a newRecipe object
+  var newRecipe = {
     name: $("#name").val().trim(),
-    ingredients: $("#ingredients").val().trim(),
+    ingredient: $("#ingredient").val().trim(),
     category: $("#category").val().trim(),
     content: $("#content").val().trim()
   };
 
   // Send an AJAX POST-request with jQuery
-  $.post("/api/new", Recipe)
+  $.post("/api/new", newRecipe)
     // On success, run the following code
     .then(function(data) {
       // Log the data we found
@@ -22,7 +22,7 @@ $("#add-btn").on("click", function(event) {
 
   // Empty each input box by replacing the value with an empty string
   $("#name").val("");
-  $("#ingredients").val("");
+  $("#ingredient").val("");
   $("#category").val("");
   $("#content").val("");
 
