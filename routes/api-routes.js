@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts and return them to the user with res.json
     app.get("/api/all", function(req, res) {
-      db.Recipes.findAll({}).then(function(result) {
+      db.Recipe.findAll({}).then(function(result) {
         res.json(result);
         });
     });

@@ -11,11 +11,7 @@ app.use(express.json());
 
 // SETUP HANDLEBARS
 var exphbs = require("express-handlebars");
-var db = require("./models")
-var syncOptions = { force: true } 
-if(process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -24,8 +20,7 @@ require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
 
 // app.use(routes);
-db.sequelize.sync(syncOptions).then(() => {
-  app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT);
-  });
+
+app.listen(PORT, function() {
+  console.log("App now listening at localhost:" + PORT);
 });
