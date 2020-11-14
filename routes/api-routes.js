@@ -42,7 +42,7 @@ module.exports = function(app) {
           name: req.body.name,
           ingredient: req.body.ingredient,
           category: req.body.category,
-          content: req.body.content
+          content: req.body.content 
       
       }, {
         where: {
