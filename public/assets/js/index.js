@@ -13,6 +13,7 @@ $("#search-btn").on("click", function(event) {
 
 // When user hits the author-search-btn
 $("ingredient-search-btn").on("click", function() {
+    
 // Save the author they typed into the author-search input
   var ingredientSearch = $("#ingredient-search").val().trim();
 // Make an AJAX get request to our api, including the user's author in the url
