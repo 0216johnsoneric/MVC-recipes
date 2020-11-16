@@ -36,6 +36,17 @@ module.exports = function(app) {
     });
 
 
+      // Get all books of a specific genre
+    app.get("/api/recipes/:category", function(req, res) {
+      Recipe.findAll({
+        where: {
+          category: req.params.category,
+          }
+      }).then(function(results) {
+        res.json(results);
+      });
+    });
+
     app.put("/recipes", function(req, res) {
       
       db.Recipe.update({

@@ -19,4 +19,18 @@ $.get("/api/all", function(data) {
     $("#recipe-well-" + i).append("<button class='delete' data-id='" + data[i].id + "'>DELETE</button>");
   }
 
+   $(".delete").click(function() {
+
+      $.ajax({
+        method: "DELETE",
+        url: "/api/recipes/" + $(this).attr("data-id")
+      })
+      .then(function() {
+        console.log("Deleted Successfully!");
+      });
+
+      $(this).closest("div").remove();
+
+    });
+
 });
